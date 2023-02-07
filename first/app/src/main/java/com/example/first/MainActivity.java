@@ -62,15 +62,22 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = makeText(context, text, duration);
         toast.show();
     }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        Context context = getApplicationContext();
+//        CharSequence text = "App just Resumed";
+//        int duration = Toast.LENGTH_SHORT;
+//        Toast toast = makeText(context, text, duration);
+//        toast.show();
+//    }
+
     @Override
     protected void onResume() {
         super.onResume();
-        Context context = getApplicationContext();
-        CharSequence text = "App just Resumed";
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = makeText(context, text, duration);
-        toast.show();
+        makeText(this, "lol", Toast.LENGTH_SHORT).show();
     }
+
     @Override
     protected void onPause() {
         super.onPause();

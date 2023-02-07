@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button zero,one, two, three, four, five, six, seven, eight,nine;
-    Button add,subtract,equal;
+    Button add,subtract,equal,multiply,divide,clear;
     WebView wv;
 
     EditText result;
@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         equal = findViewById(R.id.equal);
         add = findViewById(R.id.add);
         subtract = findViewById(R.id.subtract);
+        multiply=findViewById(R.id.multiply);
+        divide=findViewById(R.id.divide);
+        clear = findViewById(R.id.clear);
 
         result = findViewById(R.id.result);
 //wv=findViewById(R.id.web);
@@ -56,6 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 // operators
         add.setOnClickListener(this);
         subtract.setOnClickListener(this);
+        multiply.setOnClickListener(this);
+        divide.setOnClickListener(this);
+        clear.setOnClickListener(this);
 
     }
 
@@ -71,6 +77,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.two: result.append("2");
                 break;
+            case R.id.three: result.append("3");
+                break;
+            case R.id.four: result.append("4");
+                break;
+            case R.id.five: result.append("5");
+                break;
+            case R.id.six: result.append("6");
+                break;
+            case R.id.seven: result.append("7");
+                break;
+            case R.id.eight: result.append("8");
+                break;
+            case R.id.nine: result.append("9");
+                break;
+
 
 // case for rest of the button 3-9 here
             case R.id.add:
@@ -79,6 +100,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.subtract: result.append("-");
                 operatorPressed="-";
+                break;
+            case R.id.multiply :
+                result.append("*");
+                operatorPressed="*";
+                break;
+            case R.id.divide:
+                result.append("/");
+                operatorPressed="/";
+                break;
+            case R.id.clear: result.setText("");
                 break;
             case R.id.equal: finalResult=
                     evaluateExpression(result.getText().toString(),operatorPressed);
